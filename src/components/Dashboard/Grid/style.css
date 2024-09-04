@@ -44,9 +44,12 @@
 .coin-name{
     color: var(--grey);
     text-transform: capitalize;
+    width: 7rem;
+    height: 1rem;
     font-weight: light;
     font-size: 1rem;
     margin: 0;
+    margin-top: auto;
 }
 
 .chip-flex{
@@ -117,3 +120,20 @@
     font-size: 1rem;
     font-weight: 500;
 }
+
+.watchlist-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    color: var(--green);
+    padding: 0.5rem;
+    height: 1.5rem;
+    width: 1.5rem !important;
+  }
+  
+  .watchlist-icon-red {
+    border: 2px solid var(--red);
+    color: var(--red);
+  }

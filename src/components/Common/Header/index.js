@@ -19,7 +19,7 @@ const Header = () => {
           <p className='link'>Watchlist</p>
         </Link>
         <Link to='/dashboard'>
-          <Button text={"Dashboard"} onClick={() =>console.log("Btn clicked")}/>
+          <Button text={"Dashboard"} onClick={() => console.log("btn clicked")}/>
         </Link>
       </div>
       <div className='mobile-drawer'>

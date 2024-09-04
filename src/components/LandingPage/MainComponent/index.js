@@ -4,6 +4,8 @@ import Button from '../../Common/Button';
 import iphone from '../../../assets/iphone.png';
 import gradient from '../../../assets/gradient.png';
 import {motion} from "framer-motion";
+import { Link } from 'react-router-dom';
+import { RWebShare } from 'react-web-share';
 
 const MainComponent = () => {
   return (
@@ -13,8 +15,19 @@ const MainComponent = () => {
         <motion.h1 className='real-time-heading' initial={{opacity:0 ,y:50}} animate={{opacity:1 , y:0}} transition={{duration:0.5,delay:0.5}}>Real Time.</motion.h1>
         <motion.p className='info-text' initial={{opacity:0 ,y:50}} animate={{opacity:1 , y:0}} transition={{duration:0.5,delay:1}}>Track crypto through a public api in real time. Visit the dashboard to do so!</motion.p>
         <motion.div className='btn-flex' initial={{opacity:0 ,x:50}} animate={{opacity:1 , x:0}} transition={{duration:0.5,delay:1.5}}>
-            <Button text={"Dashboard"}/>
-            <Button text={"Share"} outlined={true}/>
+            <Link to='/dashboard'>
+              <Button text={"Dashboard"} onClick={() => console.log("btn clicked")}/>
+            </Link>
+            <RWebShare
+              data={{
+                text: "CryptoDashboard made by Yash Sahu using React JS.",
+                url: "https://crypto-tracker-ochre.vercel.app/",
+                title: "CryptoTracker.",
+              }}
+              onClick={() => console.log("shared successfully!")}
+            >
+              <Button text={"Share"} outlined={true}/>
+            </RWebShare>
         </motion.div>
       </div>
       <div className='phone-container'>
