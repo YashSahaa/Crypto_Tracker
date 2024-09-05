@@ -24,7 +24,6 @@ const MainComponent = () => {
                 url: "https://crypto-tracker-ochre.vercel.app/",
                 title: "CryptoTracker.",
               }}
-              onClick={() => console.log("shared successfully!")}
             >
               <Button text={"Share"} outlined={true}/>
             </RWebShare>
