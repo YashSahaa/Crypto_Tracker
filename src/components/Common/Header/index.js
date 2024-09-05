@@ -20,10 +20,10 @@ const Header = () => {
   }, []);
 
   const changeMode = () => {
-    if (localStorage.getItem("theme") != "light") {
-      setLight();
-    } else {
+    if (localStorage.getItem("theme") != "dark") {
       setDark();
+    } else {
+      setLight();
     }
     setDarkMode(!darkMode);
     toast.success("Theme Changed!");

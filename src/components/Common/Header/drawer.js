@@ -13,10 +13,10 @@ export default function AnchorTemporaryDrawer() {
   );
 
   useEffect(() => {
-    if (localStorage.getItem("theme") == "dark") {
-      setDark();
-    } else {
+    if (localStorage.getItem("theme") == "light") {
       setLight();
+    } else {
+      setDark();
     }
   }, []);
 
