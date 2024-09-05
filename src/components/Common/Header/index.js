@@ -12,18 +12,18 @@ const Header = () => {
   );
 
   useEffect(() => {
-    if (localStorage.getItem("theme") == "dark") {
-      setDark();
-    } else {
+    if (localStorage.getItem("theme") == "light") {
       setLight();
+    } else {
+      setDark();
     }
   }, []);
 
   const changeMode = () => {
-    if (localStorage.getItem("theme") != "dark") {
-      setDark();
-    } else {
+    if (localStorage.getItem("theme") != "light") {
       setLight();
+    } else {
+      setDark();
     }
     setDarkMode(!darkMode);
     toast.success("Theme Changed!");
