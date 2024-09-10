@@ -55,3 +55,46 @@
         display: block;
     }
 }
+
+@media only screen and (max-width: 400px){
+    .list-row{
+        width: 100%;
+        margin: 0;
+        padding: 0.2rem;
+        margin-top: 0.5rem;
+        gap: 0.2rem;
+    }
+
+    .list-row td{
+        padding: 0;
+        margin: 0;
+    }
+    
+    .list-row td img{
+        width: 2rem;
+        height: 2rem;
+    }
+    .list-row td div p{
+        font-size: smaller;
+        font-weight: 600;
+        margin-right: 0.5rem;
+    }
+    .list-row td div{
+        font-size: small;
+        padding: 0.5rem;
+        margin-left: 0.75rem;
+    }
+    .list-row td h3{
+        font-size: small;
+        margin-left: 2.5rem;
+    }
+    .mobile-td-mkt{
+        display: none;
+    }
+    .mobile-watchlist{
+        margin: 0 !important;
+    }
+    .mobile-name{
+        max-width: 1.5rem;
+    }
+}

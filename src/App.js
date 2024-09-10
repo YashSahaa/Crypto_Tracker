@@ -7,6 +7,7 @@ import ComparePage from './pages/Compare';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import WatchList from './pages/WatchList';
+import ErrorPage from './pages/Error';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/coin/:id' element={<Coin/>}/>
           <Route path='/compare' element={<ComparePage/>}/>
           <Route path='/watchlist' element={<WatchList/>}/>
+          <Route path='/error' element={<ErrorPage/>}/>
         </Routes>
       </BrowserRouter>
     </div>

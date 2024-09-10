@@ -6,6 +6,7 @@ import PaginationComponent from '../components/Dashboard/Pagination';
 import Loader from '../components/Common/Loader';
 import BackToTop from '../components/Common/BackToTop';
 import { get100Coins } from '../functions/get100Coins';
+import { useNavigate } from 'react-router-dom';
 
 const DashboardPage = () => {
   const [coins,setCoins] = useState([]);
@@ -13,6 +14,7 @@ const DashboardPage = () => {
   const [paginationCoins,setPaginationCoins] = useState([]);
   const [page,setPage] = useState(1);
   const [isLoading,setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(()=>{
     getData();
@@ -35,12 +37,18 @@ const DashboardPage = () => {
   
 
   const getData = async () => {
-    const myCoins = await get100Coins();
-    if(myCoins){
-      setCoins(myCoins);
-      setPaginationCoins(myCoins.slice(0,10));
+    try {
+      
+      const myCoins = await get100Coins();
+      if(myCoins){
+        setCoins(myCoins);
+        setPaginationCoins(myCoins.slice(0,10));
+        setIsLoading(false);
+      }
+    } catch (error) {
+      navigate("/error");
       setIsLoading(false);
-    } 
+    }
   }
 
   return (

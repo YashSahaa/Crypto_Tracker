@@ -8,9 +8,7 @@ import { toast } from 'react-toastify';
 
 export default function AnchorTemporaryDrawer() {
   const [open, setOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("theme") === "dark" ? true : false
-  );
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("theme") === "dark" ? true : false);
 
   useEffect(() => {
     if (localStorage.getItem("theme") !== "dark") {

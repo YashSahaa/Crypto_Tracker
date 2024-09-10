@@ -2,18 +2,23 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Common/Header';
 import TabsComponent from '../components/Dashboard/Tabs';
 import { get100Coins } from '../functions/get100Coins';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/Common/Button';
 
 const WatchList = () => {
     const [coins,setCoins] = useState([]);
+    const navigate = useNavigate();
     const watchlist = JSON.parse(localStorage.getItem("watchlist"));
 
     const getData = async () => {
+      try {
         const myCoins = await get100Coins();
         if(myCoins){
           setCoins(myCoins.filter((coin)=>watchlist.includes(coin.id)));
-        } 
+        }
+      } catch (error) {
+        navigate("/error");
+      }  
     }
 
     useEffect(()=>{
@@ -23,7 +28,7 @@ const WatchList = () => {
   return (
     <div>
       <Header/>
-      {watchlist.length>0?(
+      {watchlist && watchlist.length>0?(
         <TabsComponent coins={coins}/>
       ):(
         <div>

@@ -19,3 +19,10 @@
         width: 95%;
     }
 }
+
+@media only screen and (max-width: 400px){
+    .list-table{
+        width: 100%;
+        margin: 0rem;
+    }
+}

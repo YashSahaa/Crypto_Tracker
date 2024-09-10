@@ -1,4 +1,6 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const get100Coins = () =>{
    const myCoins = axios
@@ -11,6 +13,7 @@ export const get100Coins = () =>{
     })
     .catch((error) => {
         console.log("ERROR>>>", error.message);
+        return error;
     });
     return myCoins;
 }

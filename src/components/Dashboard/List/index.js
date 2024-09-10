@@ -27,7 +27,7 @@ const List = ({coin}) => {
                 <td>
                     <div className='name-col'>
                         <p className='coin-symbol'>{coin.symbol}</p>
-                        <p className='coin-name'>{coin.name}</p>
+                        <p className='coin-name mobile-name'>{coin.name}</p>
                     </div>
                 </td>
             </Tooltip>
@@ -65,22 +65,24 @@ const List = ({coin}) => {
                     <p className='market_cap td-right-aligned'>{convertNumber(coin.market_cap)}</p>
                 </td>
             </Tooltip>
-            <div
-                className={`watchlist-icon ${
-                    coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
-                }`}
-                style={{marginLeft:"3rem"}}
-                onClick={(e) => {
-                    if (isCoinAdded) {
-                        removeItemToWatchlist(e, coin.id, setIsCoinAdded);
-                    } else {
-                        setIsCoinAdded(true);
-                        saveItemToWatchlist(e, coin.id);
-                    }
-                }}
-                >
-                {isCoinAdded ? <StarIcon /> : <StarOutlineIcon />}
-            </div>
+            <td>
+                <div
+                    className={`watchlist-icon mobile-watchlist ${
+                        coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
+                    }`}
+                    style={{marginLeft:"3rem"}}
+                    onClick={(e) => {
+                        if (isCoinAdded) {
+                            removeItemToWatchlist(e, coin.id, setIsCoinAdded);
+                        } else {
+                            setIsCoinAdded(true);
+                            saveItemToWatchlist(e, coin.id);
+                        }
+                    }}
+                    >
+                    {isCoinAdded ? <StarIcon /> : <StarOutlineIcon />}
+                </div>
+            </td>
         </tr>
     </Link>
   )

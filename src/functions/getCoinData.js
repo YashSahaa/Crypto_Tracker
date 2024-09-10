@@ -10,6 +10,7 @@ export const getCoinData = (id) =>{
     })
     .catch((error) => {
         console.log("ERROR>>>", error.message);
+        return error;
     });
     return myData;
 }
