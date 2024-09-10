@@ -31,17 +31,13 @@ const SelectCoins = ({crypto1,crypto2,handleCoinChange}) => {
     },[]);
     
     const getData = async () => {
-      try {
-        console.log("error didn't got")
         const myCoins = await get100Coins();
-        console.log(myCoins)
-        if(myCoins){
+        if(myCoins.message !== 'Network Error'){
           setAllCoins(myCoins);
         }
-      } catch (error) {
-        console.log("error got")
-        navigate("/error");
-      }
+        else{
+          navigate("/error");
+        }
     }
     console.log(allCoins)
 
